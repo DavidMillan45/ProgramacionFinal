@@ -20,8 +20,8 @@ public class PetCaseResource {
     public Response get(@PathParam("case_id") Integer case_id) {
 
         List<PetCasePojo> petcase = new ArrayList<PetCasePojo>();
-        petcase.add(new PetCasePojo(1, null, "Perdida", "Perdida descripcion", 1));
-        petcase.add(new PetCasePojo(2, null, "Fallecimiento", "Fallecimiento descripcion", 2));
+        petcase.add(new PetCasePojo(1, null, "Perdida", "Perdida descripcion", "1"));
+        petcase.add(new PetCasePojo(2, null, "Fallecimiento", "Fallecimiento descripcion", "2"));
 
         return Response.ok()
                 .entity(petcase)

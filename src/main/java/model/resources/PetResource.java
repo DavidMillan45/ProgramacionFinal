@@ -2,6 +2,7 @@ package model.resources;
 
 
 import model.resources.pojos.PetPojo;
+import model.services.OwnerService;
 import model.services.PetService;
 
 import javax.ws.rs.*;
@@ -17,8 +18,8 @@ public class PetResource {
     public Response list(@PathParam("pet_id") Integer pet_id) {
 
         List<PetPojo> pets = new ArrayList<PetPojo>();
-        pets.add(new PetPojo(1, "Microchip1", "Max", "Especie1", "Raza1", "Pequeño", "M", "Url1", "Owner1"));
-        pets.add(new PetPojo(2, "Microchip2", "Pepe", "Especie2", "Raza2", "Grande", "H", "Url2", "Owner2"));
+        pets.add(new PetPojo("1", "Microchip1", "Max", "Especie1", "Raza1", "Pequeño", "M", "Url1", "Owner1"));
+        pets.add(new PetPojo("2", "Microchip2", "Pepe", "Especie2", "Raza2", "Grande", "H", "Url2", "Owner2"));
 
         return Response.ok()
                 .entity(pets)
@@ -26,6 +27,7 @@ public class PetResource {
     }
 
     @POST
+    @Path("/pets")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response create(PetPojo petpojo) {
@@ -47,7 +49,18 @@ public class PetResource {
 
     @PUT
     @Produces(MediaType.APPLICATION_JSON)
-    public Response modify(@PathParam("pet_id") Integer pet_id, PetPojo pet) {
+    public Response modify(@PathParam("pet_id") String pet_id, String microchip, PetPojo pet) {
+        new PetService().updatePetMicrochi(pet_id,microchip);
+
+        return Response.ok()
+                .entity(pet)
+                .build();
+    }
+
+    @PUT
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response modify(@PathParam("pet_id") String pet_id, String name, String species, String race, String size, String sex, String picture, PetPojo pet) {
+        new PetService().updatePet(pet_id, name, species, race, size, sex, picture);
 
         return Response.ok()
                 .entity(pet)

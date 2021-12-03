@@ -22,13 +22,14 @@ public class OfficialRepositoryImpl implements OfficialRepository {
     }
 
 
-    public Optional<Official> update(String username, String name) {
+    public Optional<Official> update(String username, String name, String email) {
 
         try {
             entityManager.getTransaction().begin();
 
             Official official = entityManager.find(Official.class, username);
             official.setName(name);
+            official.setName(email);
 
             //entityManager.update(owner); // Revisar si esto es obligatorio
             entityManager.getTransaction().commit();

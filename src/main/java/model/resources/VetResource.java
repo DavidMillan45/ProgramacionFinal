@@ -2,7 +2,9 @@ package model.resources;
 
 
 import model.resources.filters.Logged;
+import model.resources.pojos.PetPojo;
 import model.resources.pojos.VetPojo;
+import model.services.OwnerService;
 import model.services.VetService;
 
 
@@ -46,6 +48,17 @@ public class VetResource {
 
                     .build();
         }
+    }
+
+    @PUT
+    @Path("/vets/{username}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response modify(@PathParam("username") String username, String name, String email, String address, String neighborhood, VetPojo vet) {
+        new VetService().updateVet(username, name, email, address, neighborhood);
+
+        return Response.ok()
+                .entity(vet)
+                .build();
     }
 
     @Logged

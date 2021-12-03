@@ -20,7 +20,7 @@ public class VisitService {
     VisitRepository visitRepository;
     PetRepository petRepository;
 
-    public void saveVisit(String created_at, String type, String description, Integer pet_id) {
+    public void saveVisit(String created_at, String type, String description, String pet_id) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();

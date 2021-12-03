@@ -11,7 +11,7 @@ public class Pet {
     @Id
     @GeneratedValue
     @Column(name = "pet_id")
-    private Integer pet_id;
+    private String pet_id;
 
     @Column(name = "microchip", unique = true)
     private String microchip;
@@ -60,7 +60,7 @@ public class Pet {
         this.picture = picture;
     }
 
-    public Pet(Integer pet_id, String microchip, String name, String especies, String race, String size, String sex, String picture, List<PetCase> petscase) {
+    public Pet(String pet_id, String microchip, String name, String especies, String race, String size, String sex, String picture, List<PetCase> petscase) {
         this.pet_id = pet_id;
         this.microchip = microchip;
         this.name = name;
@@ -72,11 +72,11 @@ public class Pet {
         Petscase = petscase;
     }
 
-    public Integer getPet_id() {
+    public String getPet_id() {
         return pet_id;
     }
 
-    public void setPet_id(Integer pet_id) {
+    public void setPet_id(String pet_id) {
         this.pet_id = pet_id;
     }
 

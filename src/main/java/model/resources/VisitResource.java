@@ -32,7 +32,7 @@ public class VisitResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/pets/{pet_id}/vets/{vet_id}")
-    public Response create(@PathParam("vet_id") String vet_id, @PathParam("pet_id") Integer pet_id, VisitPojo visit, String microchip) {
+    public Response create(@PathParam("vet_id") String vet_id, @PathParam("pet_id") String pet_id, VisitPojo visit, String microchip) {
 
         new VisitService().saveVisit(visit.getCreated_at(), visit.getType(), visit.getDescription(), pet_id);
 

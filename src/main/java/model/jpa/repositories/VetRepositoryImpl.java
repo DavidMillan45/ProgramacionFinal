@@ -25,13 +25,14 @@ public class VetRepositoryImpl implements VetRepository {
     }
 
 
-    public Optional<Vet> update(String username, String name, String address, String neighborhood) {
+    public Optional<Vet> update(String username, String name, String email,String address, String neighborhood) {
         try {
             entityManager.getTransaction().begin();
             Vet vet = entityManager.find(Vet.class, username);
             vet.setName(name);
-            // vet.setAddress(address);
-            //vet.setNeighborhood(neighborhood);
+            vet.setAddress(email);
+            vet.setNeighborhood(address);
+            vet.setNeighborhood(neighborhood);
             entityManager.getTransaction().commit();
             return Optional.of(vet);
         } catch (Exception e) {

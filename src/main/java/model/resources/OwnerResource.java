@@ -2,7 +2,9 @@ package model.resources;
 
 
 import model.resources.filters.Logged;
+import model.resources.pojos.OfficialPojo;
 import model.resources.pojos.OwnerPojo;
+import model.services.OfficialService;
 import model.services.OwnerService;
 
 import javax.ws.rs.*;
@@ -45,6 +47,17 @@ public class OwnerResource {
 
         return Response.ok()
                 .entity("Hello, World, " + role + "!")
+                .build();
+
+    }
+
+    @PUT
+    @Path("/owners/{username}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response modify( @PathParam("username") String username, OwnerPojo ownerPojo) {
+        new OwnerService().updateOwner2(ownerPojo);
+        return Response.ok()
+                .entity(ownerPojo)
                 .build();
 
     }

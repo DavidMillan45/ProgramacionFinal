@@ -10,7 +10,7 @@ public interface VetRepository {
 
     Optional<Vet> findByUsername(String username);
 
-    Optional<Vet> update(String username, String name, String address, String neighborhood);
+    Optional<Vet> update(String username, String name, String email, String address, String neighborhood);
 
     List<Vet> findAll();
 

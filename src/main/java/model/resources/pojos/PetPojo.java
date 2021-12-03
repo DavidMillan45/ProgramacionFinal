@@ -2,7 +2,7 @@ package model.resources.pojos;
 
 public class PetPojo {
 
-    private Integer pet_id;
+    private String pet_id;
     private String microchip;
     private String name;
     private String species;
@@ -12,7 +12,10 @@ public class PetPojo {
     private String picture;
     private String owner_id;
 
-    public PetPojo(Integer pet_id, String microchip, String name, String species, String race, String size, String sex, String picture, String owner_id) {
+    public PetPojo(){
+
+    }
+    public PetPojo(String pet_id, String microchip, String name, String species, String race, String size, String sex, String picture, String owner_id) {
         this.pet_id = pet_id;
         this.microchip = microchip;
         this.name = name;
@@ -24,11 +27,11 @@ public class PetPojo {
         this.owner_id = owner_id;
     }
 
-    public Integer getPet_id() {
+    public String getPet_id() {
         return pet_id;
     }
 
-    public void setPet_id(Integer pet_id) {
+    public void setPet_id(String pet_id) {
         this.pet_id = pet_id;
     }
 

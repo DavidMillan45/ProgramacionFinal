@@ -6,9 +6,12 @@ public class PetCasePojo {
     private Date created_at;
     private String type;
     private String description;
-    private Integer pet_id;
+    private String pet_id;
 
-    public PetCasePojo(Integer case_id, Date created_at, String type, String description, Integer pet_id) {
+    public PetCasePojo (){
+
+    }
+    public PetCasePojo(Integer case_id, Date created_at, String type, String description, String pet_id) {
         this.case_id = case_id;
         this.created_at = created_at;
         this.type = type;
@@ -48,11 +51,11 @@ public class PetCasePojo {
         this.description = description;
     }
 
-    public Integer getPet_id() {
+    public String getPet_id() {
         return pet_id;
     }
 
-    public void setPet_id(Integer pet_id) {
+    public void setPet_id(String pet_id) {
         this.pet_id = pet_id;
     }
 }

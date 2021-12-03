@@ -48,4 +48,14 @@ public class OfficialResource {
 
     }
 
+    @PUT
+    @Path("/officials/{username}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response modify( @PathParam("username") String username, String name, String email, OfficialPojo officialPojo) {
+        new OfficialService().updateOfficial(username, name, email);
+        return Response.ok()
+                .entity(officialPojo)
+                .build();
+
+    }
 }

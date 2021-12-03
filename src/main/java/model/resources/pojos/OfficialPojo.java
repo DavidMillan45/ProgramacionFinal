@@ -6,6 +6,9 @@ public class OfficialPojo {
     private String email;
     private String name;
 
+    public OfficialPojo () {
+
+    }
     public OfficialPojo(String username, String password, String email) {
         this.username = username;
         this.password = password;

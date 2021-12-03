@@ -65,7 +65,7 @@ public class PetService {
 
     }
 
-    public void updatePet(Integer pet_id, String name, String species, String race, String size, String sex, String picture) {
+    public void updatePet(String pet_id, String name, String species, String race, String size, String sex, String picture) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -78,7 +78,7 @@ public class PetService {
 
     }
 
-    public void updatePetMicrochi(Integer pet_id, String microchip) {
+    public void updatePetMicrochi(String pet_id, String microchip) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();

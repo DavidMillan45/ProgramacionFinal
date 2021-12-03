@@ -10,6 +10,9 @@ public class OwnerPojo {
     private String address;
     private String neighborhood;
 
+    public OwnerPojo() {
+    }
+
     public OwnerPojo(String username, String password, String email) {
         this.username = username;
         this.password = password;

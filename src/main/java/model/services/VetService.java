@@ -43,13 +43,13 @@ public class VetService {
             return Optional.empty();
         }
     }
-    public void updateVet(String username, String name, String address, String neighborhood) {
+    public void updateVet(String username, String name, String email, String address, String neighborhood) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         vetRepository = new VetRepositoryImpl(entityManager);
-        vetRepository.update(username,name,address,neighborhood);
+        vetRepository.update(username, name, email, address, neighborhood);
 
         entityManager.close();
         entityManagerFactory.close();

@@ -15,7 +15,7 @@ public class PetRepositoryImpl implements PetRepository {
     }
 
 
-    public Optional<Pet> findById(Integer id) {
+    public Optional<Pet> findById(String id) {
         Pet pet = entityManager.find(Pet.class, id);
         return pet != null ? Optional.of(pet) : Optional.empty();
     }
@@ -24,7 +24,7 @@ public class PetRepositoryImpl implements PetRepository {
         return entityManager.createQuery("from Pet").getResultList();
     }
 
-    public Optional<Pet> update(Integer pet_id, String name, String species, String race, String size, String sex, String picture) {
+    public Optional<Pet> update(String pet_id, String name, String species, String race, String size, String sex, String picture) {
         try {
             entityManager.getTransaction().begin();
             Pet pet = entityManager.find(Pet.class, pet_id);
@@ -42,11 +42,11 @@ public class PetRepositoryImpl implements PetRepository {
         return Optional.empty();
     }
 
-    public Optional<Pet> updateMicrochip(Integer pet_id, String microchp) {
+    public Optional<Pet> updateMicrochip(String pet_id, String microchip) {
         try {
             entityManager.getTransaction().begin();
             Pet pet = entityManager.find(Pet.class, pet_id);
-            pet.setMicrochip(microchp);
+            pet.setMicrochip(microchip);
             entityManager.getTransaction().commit();
             return Optional.of(pet);
         } catch (Exception e) {
@@ -55,7 +55,6 @@ public class PetRepositoryImpl implements PetRepository {
         return Optional.empty();
 
     }
-
 
     public Optional<Pet> save(Pet pet) {
         try {

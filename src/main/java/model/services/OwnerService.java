@@ -71,13 +71,26 @@ public class OwnerService {
 
 
 
-    public void updateOwner(String username, String name, String addres, String neighborhood) {
+   /*public void updateOwner(String username, String name, String addres, String neighborhood) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         ownerRepository = new OwnerRepositoryImpl(entityManager);
         ownerRepository.update(username, name, addres, neighborhood);
+
+        entityManager.close();
+        entityManagerFactory.close();
+
+    }*/
+
+    public void updateOwner2(OwnerPojo ownerPojo) {
+
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        ownerRepository = new OwnerRepositoryImpl(entityManager);
+        ownerRepository.update(ownerPojo.getUsername(), ownerPojo.getName(), ownerPojo.getAdress(),ownerPojo.getEmail() ,ownerPojo.getNeighborhood());
 
         entityManager.close();
         entityManagerFactory.close();

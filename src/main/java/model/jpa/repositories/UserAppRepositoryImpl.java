@@ -44,12 +44,12 @@ public class UserAppRepositoryImpl implements UserAppRepository {
         return Optional.empty();
     }
 
-    public Optional<UserApp> save(UserApp userap) {
+    public Optional<UserApp> save(UserApp userapp) {
         try {
             entityManager.getTransaction().begin();
-            entityManager.persist(userap);
+            entityManager.persist(userapp);
             entityManager.getTransaction().commit();
-            return Optional.of(userap);
+            return Optional.of(userapp);
         } catch (Exception e) {
             e.printStackTrace();
         }

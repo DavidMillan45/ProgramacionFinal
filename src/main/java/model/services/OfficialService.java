@@ -64,13 +64,13 @@ public class OfficialService {
         }
     }
 
-    public Optional<OfficialPojo> updateOfficial(String username, String name) {
+    public Optional<OfficialPojo> updateOfficial(String username, String name, String email) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         officialRepository = new OfficialRepositoryImpl(entityManager);
-        Optional<Official> persistedOfficial = officialRepository.update(username, name);
+        Optional<Official> persistedOfficial = officialRepository.update(username, name, email);
 
         entityManager.close();
         entityManagerFactory.close();
@@ -80,5 +80,8 @@ public class OfficialService {
                 value.getName()
 
         ));
+    }
+
+    public void updateOfficial(OfficialPojo officialPojo) {
     }
 }

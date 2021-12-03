@@ -10,6 +10,9 @@ public class VisitPojo {
     private String vet_id;
     private Integer pet_id;
 
+    public VisitPojo(){
+
+    }
     public VisitPojo(Integer visit_id, String created_at, String type, String description, String vet_id, Integer pet_id) {
         this.visit_id = visit_id;
         this.created_at = created_at;
