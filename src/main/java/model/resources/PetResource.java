@@ -11,9 +11,10 @@ import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 
-@Path("/pets/{pet_id}")
+@Path("/pets")
 public class PetResource {
     @GET
+    @Path("/{pet_id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response list(@PathParam("pet_id") Integer pet_id) {
 
@@ -48,6 +49,7 @@ public class PetResource {
     }
 
     @PUT
+    @Path("/microchip/{pet_id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response modify(@PathParam("pet_id") String pet_id, String microchip, PetPojo pet) {
         new PetService().updatePetMicrochi(pet_id,microchip);
@@ -58,6 +60,7 @@ public class PetResource {
     }
 
     @PUT
+    @Path("/{pet_id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response modify(@PathParam("pet_id") String pet_id, String name, String species, String race, String size, String sex, String picture, PetPojo pet) {
         new PetService().updatePet(pet_id, name, species, race, size, sex, picture);

@@ -49,7 +49,7 @@ public class OfficialResource {
     }
 
     @PUT
-    @Path("/officials/{username}")
+    @Path("/{username}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response modify( @PathParam("username") String username, String name, String email, OfficialPojo officialPojo) {
         new OfficialService().updateOfficial(username, name, email);

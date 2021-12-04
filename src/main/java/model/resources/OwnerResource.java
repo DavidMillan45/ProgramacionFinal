@@ -52,7 +52,7 @@ public class OwnerResource {
     }
 
     @PUT
-    @Path("/owners/{username}")
+    @Path("/{username}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response modify( @PathParam("username") String username, OwnerPojo ownerPojo) {
         new OwnerService().updateOwner2(ownerPojo);

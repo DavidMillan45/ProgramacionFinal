@@ -15,7 +15,7 @@ import java.util.List;
 public class VisitResource {
 
     @GET
-    @Path("/{username}/pet/{pet_id}")
+    @Path("/{username}/{pet_id}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response list(@PathParam("username") String username, @PathParam("pet_id") Integer pet_id) {
 

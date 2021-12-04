@@ -51,7 +51,7 @@ public class VetResource {
     }
 
     @PUT
-    @Path("/vets/{username}")
+    @Path("/{username}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response modify(@PathParam("username") String username, String name, String email, String address, String neighborhood, VetPojo vet) {
         new VetService().updateVet(username, name, email, address, neighborhood);
