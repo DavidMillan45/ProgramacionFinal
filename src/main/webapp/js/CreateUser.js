@@ -1,18 +1,24 @@
 document.getElementById("usersave-button").onclick = function () {
-    let usersame = document.getElementById("username-input").value;
-    let Person_id = document.getElementById("Person_id-input").value;
+    let username = document.getElementById("username-input").value;
+    let password = document.getElementById("password-input").value;
+    let email = document.getElementById("email_id-input").value;
+    let person_id = document.getElementById("Person_id-input").value;
     let name = document.getElementById("name-input").value;
     let address = document.getElementById("address-input").value;
     let neighborhood = document.getElementById("neighborhood-input").value;
     let json = {
-        username: usersame,
-        Person_id: Person_id,
+
+        username: username,
+        password: password,
+        email: email,
+        person_id: person_id,
         name : name,
         address: address,
         neighborhood: neighborhood,
     }
-
-    fetch('http://localhost:8080/ProgramacionFinal-1.0-SNAPSHOT/api/' + document.getElementById("type-input").value, {
+    console.log(json)
+    //console.log(document.getElementById("type-input").value, username, password,email,person_id,name,address,neighborhood)
+    fetch('http://localhost:8080/ProgramacionFinal-1.0-SNAPSHOT/api/' + document.getElementById("type-input").value+'s', {
         method: 'POST',
         body: JSON.stringify(json),
         headers: {

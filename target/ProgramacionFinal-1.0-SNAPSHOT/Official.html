@@ -2,26 +2,104 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" href="css/StyleFuncionario.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/S tyleFuncionario.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Ciudadano de 4 Patas</title>
 </head>
 <body>
-
-<h1>Bienvenido Funcionario</h1>
-<div id="options">
-    <table class="table-pets" id="pet-table">
-        <thead id="thead-table">
+<h1>¡WELCOME OFFICIAL!</h1>
+<input id="Signoff-button" type="button" value="Sign out">
+<br><br>
+<div class="container">
+    <table class="table table-sortable" id="Owner-table">
+        <thead>
+        <tr class="title-tablepetcase">
+            <td>OWNERS</td>
+        </tr>
         <tr>
-            <th class="Dates-th">Fecha registro</th>
-            <th class="Dates-th">Nombre mascota</th>
-            <th class="Dates-th">Fotografia</th>
+            <th scope="col" class="columm-header">Username</th>
+            <th scope="col" class="columm-header">Person_id</th>
+            <th scope="col" class="columm-header">Name</th>
+            <th scope="col" class="columm-header">Address</th>
+            <th scope="col" class="columm-header">Neighborhood</th>
         </tr>
         </thead>
-        <tbody id="body-table">
-
-        </tbody>
+        <tbody id="owners-table"></tbody>
     </table>
 </div>
-<script src="js/Funcionario.js"></script>
+<br><br>
+<div class="container">
+    <table class="table table-sortable" id="pet-table">
+        <thead>
+        <tr class="title-tablepetcase">
+            <td>PETS TABLE</td>
+        </tr>
+        <tr>
+            <th scope="col" class="columm-header">ID</th>
+            <th scope="col" class="columm-header">Microchip</th>
+            <th scope="col" class="columm-header">Name pet</th>
+            <th scope="col" class="columm-header">Species</th>
+            <th scope="col" class="columm-header">Race</th>
+            <th scope="col" class="columm-header">Size</th>
+            <th scope="col" class="columm-header">Sex</th>
+            <th scope="col" class="columm-header">Picture</th>
+        </tr>
+        </thead>
+        <tbody id="body-table"></tbody>
+    </table>
+</div>
+<br><br>
+
+<div class="container">
+    <table class="table table-sortable" id="petcase-table">
+        <thead>
+        <tr class="title-tablepetcase">
+            <td>PETS CASES</td>
+        </tr>
+        <tr>
+            <th scope="col" class="columm-header">Case id</th>
+            <th scope="col" class="columm-header">Created_at</th>
+            <th scope="col" class="columm-header">Type</th>
+            <th scope="col" class="columm-header">Description</th>
+            <th scope="col" class="columm-header">Pet_id</th>
+        </tr>
+        </thead>
+        <tbody id="bodypetcase-table"></tbody>
+    </table>
+</div>
+<br><br>
+<div class="container">
+    <table class="table table-sortable" id="visits-table">
+        <thead>
+        <tr class="title-tablepetcase">
+            <td> PETS VISITS</td>
+        </tr>
+        <tr>
+            <th scope="col" class="columm-header">Visit id</th>
+            <th scope="col" class="columm-header">Created_at</th>
+            <th scope="col" class="columm-header">Type</th>
+            <th scope="col" class="columm-header">Description</th>
+            <th scope="col" class="columm-header">Vet_id</th>
+            <th scope="col" class="columm-header">Pet_id</th>
+        </tr>
+        </thead>
+        <tbody id="bodyvisits-table"></tbody>
+    </table>
+</div>
+<script src="js/jquery-3.6.0.min.js"></script>
+
+
+<script src="js/tablesort.js"></script>
+<script src="js/Funcionario.js">
+    let tr = document.createElement("tr")
+    tr.setAttribute(2)
+    document.getElementById("body-table").appendChild(tr)
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
 </body>
 </html>
