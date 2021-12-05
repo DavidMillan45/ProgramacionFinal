@@ -1,19 +1,68 @@
-table#pet-table {
+table {
     border: 1px solid;
     border-collapse: collapse;
     border-color: black;
 }
 
-th.Dates-th {
-    color: black;
+th {
+    border: 1px solid;
+    border-color: black;
+    padding: 5px;
+}
+tr.title-tablepetcase {
+    color: #008080;
     border: 1px solid #008080;
-    width: 100px;
-    padding: 10px;
+
+}
+input#Signoff-button {
+    position: absolute;
+    top: 10px;
+    left: 400px;
 }
 
-td{
-    color: black;
+th.columm-header {
+    color: #008080;
     border: 1px solid #008080;
     width: 100px;
-    padding: 10px;
+}
+
+tbody.body-table {
+    color: #008080;
+    border: 1px solid #008080;
+
+}
+
+.table-sortable th {
+    cursor: pointer;
+}
+
+.table-sortable .th-sort-asc::after {
+    content: "\25b4";
+}
+
+.table-sortable .th-sort-desc::after {
+    content: "\25be";
+}
+
+.table-sortable .th-sort-asc::after,
+.table-sortable .th-sort-desc::after {
+    margin-left: 5px;
+}
+
+.table-sortable .th-sort-asc,
+.table-sortable .th-sort-desc {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+tbody.body-table {
+    color: #008080;
+    border: 1px solid #008080;
+
+}
+
+
+
+img {
+    width: 100px;
+    height: 100px;
 }
