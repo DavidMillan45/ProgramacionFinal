@@ -16,12 +16,6 @@ th.columm-header {
     width: 100px;
 }
 
-tr.title-tablepetcase {
-    color: #008080;
-    border: 1px solid #008080;
-
-}
-
 tbody.body-table {
     color: #008080;
     border: 1px solid #008080;
@@ -64,58 +58,9 @@ input#Microchipnew-button {
 
 }
 
-.title {
-
-    color: #008080;
-    border: 1px solid #008080;
-}
-
-.title-tablepetcase {
-    color: #008080;
-    border: 1px solid #008080;
-
-}
-
 div#editpet {
     position: absolute;
-    left: 20px;
-    z-index: 999;
-    padding: 10px;
-    display: none;
-    border: 1px solid black;
-    background-color: white;
 
-
-}
-
-div#createpetcase-div {
-    position: absolute;
-    left: 20px;
-    z-index: 999;
-    padding: 10px;
-    display: none;
-    border: 1px solid black;
-    background-color: white;
-
-
-}
-
-div#createpet {
-    position: absolute;
-    left: 20px;
-    z-index: 999;
-    padding: 10px;
-    display: none;
-    border: 1px solid black;
-    background-color: white;
-
-
-}
-
-
-div#owneredit-div {
-    position: absolute;
-    left: 20px;
     z-index: 999;
     padding: 10px;
     display: none;
@@ -130,16 +75,15 @@ select#formedit-select {
     background-color: black;
 }
 
+input#Signoff-button {
+    position: absolute;
+    top: 10px;
+    left: 450px;
+}
 
 input#Esterilizacionnew-button {
     position: absolute;
     left: 150px;
-}
-
-input#Signoff-button {
-    position: absolute;
-    top: 10px;
-    left: 400px;
 }
 
 img {

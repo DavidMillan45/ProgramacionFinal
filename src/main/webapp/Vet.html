@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleVet.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>VET</title>
+</head>
+<body>
+<div class="container">
+    <h1>¡WELCOME VET!</h1>
+    <input id="Signoff-button" type="button" value="Sign off">
+    <form name="formulario" id="pet-form">
+        <div class="row">
+            <div class="col">
+                <label for="date-input">Created at:</label>
+                <input type="date" class="form-control" id="date-input" required>
+            </div>
+            <div class="col">
+                <label for="addressedit-input">Visit id:</label>
+                <input type="text" class="form-control" id="vetvisitid-input" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="addressedit-input">Type:</label>
+                <select class="form-select" id="petsize-input" required>
+                    <option>Sterilization</option>
+                    <option>Microchip implantation</option>
+                    <option>Vaccination</option>
+                    <option>Deworming</option>
+                    <option>Urgency</option>
+                    <option>Control</option>
+                </select>
+            </div>
+            <div class="col">
+                <label for="addressedit-input">Description:</label>
+                <input type="text" class="form-control" id="description-input">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="date-input">Vet id:</label>
+                <input type="text" class="form-control" id="vet_id-input" required>
+            </div>
+            <div class="col">
+                <label for="date-input">Pet id:</label>
+                <input type="text" class="form-control" id="Pet_id-input" required>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="addressedit-input">Edit microchip:</label>
+                <input type="text" class="form-control" id="Microchipnew-inputtext" disabled="">
+            </div>
+            <div class="col">
+                <br>
+                <button type="submit" class="btn btn-primary" id="petsave-button">Guardar</button>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <br>
+                    <input id="petedit-button" type="button" value="Editar">
+                    <div id="editpet">
+
+                        <form>
+                            <label for="addressedit-input">Edit address:</label>
+                            <input type="text" class="form-control" id="addressedit-input">
+                            <label for="petsize-input">Edit neighborhood:</label>
+                            <input type="text" class="form-control" id="neighborhoodedit-input">
+
+                        </form>
+                        <br>
+                        <input id="savechanges-button" type="button" value="Guardar Cambios">
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </form>
+</div>
+<br>
+
+<br><br>
+
+<div class="container">
+    <table class="table table-sortable" id="pet-table">
+        <thead>
+        <tr>
+            <th scope="col" class="columm-header">Visit id</th>
+            <th scope="col" class="columm-header">Create at</th>
+            <th scope="col" class="columm-header">Type</th>
+            <th scope="col" class="columm-header">Description</th>
+            <th scope="col" class="columm-header">Vet id</th>
+            <th scope="col" class="columm-header">Pet id</th>
+
+        </tr>
+        </thead>
+        <tbody id="body-table"></tbody>
+    </table>
+</div>
+
+<script src="js/jquery-3.6.0.min.js"></script>
+
+
+<script src="js/tablesort.js"></script>
+<script src="js/Vet.js">
+    let tr = document.createElement("tr")
+    tr.setAttribute(2)
+    document.getElementById("body-table").appendChild(tr)
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+</body>
+</html>

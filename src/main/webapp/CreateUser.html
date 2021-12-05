@@ -4,14 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="css/styleCreateUser.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <title>Creación de un nuevo usuario</title>
 </head>
 <body>
-<form class="container">
+<div class="container">
     <h1>Create user</h1>
+    <input id="Signoff-button" type="button" value="Sign off">
     <form name="formulario" id="user-form">
         <div class="row">
             <div class="col">
@@ -50,7 +51,18 @@
             </div>
 
         </div>
+        <div class="row">
+            <div class="col">
+                <br>
+                <div>
+                    <button type="submit" className="btn btn-primary" id="usersave-button">Guardar</button>
+                </div>
+            </div>
+        </div>
+
     </form>
-</form>
+</div>
+<script src="js/CreateUser.js">
+</script>
 </body>
 </html>

@@ -10,195 +10,224 @@
     <title>Ciudadano de 4 Patas</title>
 </head>
 <body>
-<div class="container">
-    <h1>Ciudadano de 4 Patas</h1>
+<h1>¡WELCOME OWNER!</h1>
+<input id="Signoff-button" type="button" value="Sign off">
+<input id="createpet-button" type="button" value="Create pet">
+<div id="createpet">
+    <h1>Create Pet</h1>
     <form name="formulario" id="pet-form">
         <div class="row">
             <div class="col">
-                <label for="date-input">Fecha de Registro:</label>
-                <input type="date" class="form-control" id="date-input" required>
+                <label for="petname-input">Pet id:</label>
+                <input type="text" class="form-control" id="pet_id-input" required>
             </div>
             <div class="col">
-                <label for="owner-input">Nombre del propietario:</label>
-                <input type="text" class="form-control" id="owner-input" required>
+                <label for="petname-input">Name pet:</label>
+                <input type="text" class="form-control" id="petname-input" required>
             </div>
         </div>
 
         <div class="row">
-            <div class="col">
-                <label for="petname-input">Nombre de la mascota:</label>
-                <input type="text" class="form-control" id="petname-input" required>
-            </div>
+
             <div class="col">
                 <label for="mc-input">Microchip:</label>
                 <input type="text" class="form-control" id="mc-input">
             </div>
+            <div class="col">
+                <label for="mc-input">Race:</label>
+                <input type="text" class="form-control" id="rc-input">
+            </div>
         </div>
 
         <div class="row">
             <div class="col">
-                <label for="petspecies-input">Especie:</label>
+                <label for="petspecies-input">Species:</label>
                 <select class="form-select" id="petspecies-input" required>
-                    <option>Canino</option>
-                    <option>Felino</option>
+                    <option>Canine</option>
+                    <option>Feline</option>
                 </select>
             </div>
             <div class="col">
-                <label for="petsex-input">Sexo:</label>
+                <label for="petsex-input">Sex:</label>
                 <select class="form-select" id="petsex-input" required>
-                    <option>Macho</option>
-                    <option>Hembra</option>
+                    <option>M</option>
+                    <option>H</option>
                 </select>
             </div>
         </div>
 
         <div class="row">
             <div class="col">
-                <label for="petsize-input">Tamaño:</label>
+                <label for="petsize-input">Size:</label>
                 <select class="form-select" id="petsize-input" required>
-                    <option>Minialtura</option>
-                    <option>Pequeño</option>
-                    <option>Mediano</option>
-                    <option>Grande</option>
+                    <option>miniature</option>
+                    <option>little</option>
+                    <option>medium</option>
+                    <option>big</option>
                 </select>
-            </div>
-            <div class="col">
-                <label for="danger-input">¿La mascota es potencialmente peligrosa?:</label>
-                <select class="form-select" id="danger-input" required>
-                    <option>Si</option>
-                    <option>No</option>
-                </select>
-            </div>
-        </div>
 
-        <div class="row">
-            <div class="col">
-                <label for="sterilized-input">¿La mascota esta esterilizada?:</label>
-                <select class="form-select" id="sterilized-input" required>
-                    <option>Si</option>
-                    <option>No</option>
-                </select>
             </div>
             <div class="col">
-                <label for="locality-input">Localidad:</label>
-                <select class="form-select" id="locality-input" required>
-                    <option>USAQUEN</option>
-                    <option>CHAPINERO</option>
-                    <option>SANTA FE</option>
-                    <option>SAN CRISTOBAL</option>
-                    <option>USME</option>
-                    <option>TUNJUELITO</option>
-                    <option>BOSA</option>
-                    <option>KENNEDY</option>
-                    <option>FONTIBON</option>
-                    <option>ENGATIVA</option>
-                    <option>SUBA</option>
-                    <option>B. UNIDOS</option>
-                    <option>TEUSAQUILLO</option>
-                    <option>LOS MARTIRES</option>
-                    <option>A. NARINO</option>
-                    <option>P. ARANDA</option>
-                    <option>R. URIBE</option>
-                    <option>C. BOLIVAR</option>
-                    <option>MUNICIPIOS ALEATORIOS BOGOTA D.C.</option>
-                </select>
+                <label for="pet_id-input">Picture:</label>
+                <br>
+                <input type="file" name="multipartServlet"/>
             </div>
+
         </div>
         <br>
-        <!-- <input id="petsave-button" type="button" value="Guardar"> -->
-        <button type="submit" class="btn btn-primary" id="petsave-button">Guardar</button>
-        <!-- <input id="petsave-button" type="button" value="Guardar">
-            <input id="petclean-button" type="button" value="Limpiar"> -->
+
+        <button type="submit" class="btn btn-primary" id="petsave-button">Save</button>
+
     </form>
 </div>
+<br>
+<input id="petedit-button" type="button" value="Edit pet">
+<div id="editpet">
+    <h1>Edit Pet</h1>
+    <form>
+        <label for="mc-input">Select pet id to edit:</label>
+        <input type="number" class="form-control" min="0" id="mcedit-input">
+        <label for="petname-input">Name pet:</label>
+        <input type="text" class="form-control" id="petnameedit-input" required>
+        <label for="petsize-input">Size:</label>
+        <select class="form-select" id="petsizeedit-input" required>
+            <option>miniature</option>
+            <option>little</option>
+            <option>medium</option>
+            <option>big</option>
+        </select>
+        <label for="petspecies-input">Species:</label>
+        <select class="form-select" id="petspeciesedit-input" required>
+            <option>Canine</option>
+            <option>Feline</option>
+        </select>
+        <label for="mc-input">Race:</label>
+        <input type="text" class="form-control" id="rcedit-input">
 
+        <label for="petsex-input">Sex:</label>
+        <select class="form-select" id="petsexedit-input" required>
+            <option>M</option>
+            <option>H</option>
+        </select>
+
+    </form>
+
+    <br>
+    <input id="savechanges-button" type="button" value="Save changes">
+
+</div>
+<br>
+<input id="owneredit-button" type="button" value="Edit Owner">
+<div id="owneredit-div">
+    <h1>Edit Data</h1>
+    <form>
+        <label for="mc-input">Name:</label>
+        <input type="text" class="form-control" min="0" id="nameownerdit-input" required>
+        <label for="petname-input">Address:</label>
+        <input type="text" class="form-control" id="addressowneredit-input" required>
+        <label for="petname-input">Neighborhood:</label>
+        <input type="text" class="form-control" id="neighborhoodowneredit-input" required>
+    </form>
+
+    <br>
+    <input id="savechangesowner-button" type="button" value="Save changes">
+</div>
+<br>
+<input id="createpetcase-button" type="button" value="Create pet case">
+<div id="createpetcase-div">
+    <h1>Create Pet Case</h1>
+    <form>
+        <div class="row">
+            <div class="col">
+                <label for="petname-input">Case id:</label>
+                <input type="text" class="form-control" id="case_id-input" required>
+            </div>
+            <div class="col">
+                <label for="petname-input">Created at:</label>
+                <input type="date" class="form-control" id="date-input" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="petname-input">Type:</label>
+                <input type="text" class="form-control" id="typecase-input" required>
+            </div>
+            <div class="col">
+                <label for="petname-input">Description:</label>
+                <input type="text" class="form-control" id="descriptioncase-input" required>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <label for="petname-input">Pet id:</label>
+                <input type="text" class="form-control" id="pet_idcase-input" required>
+            </div>
+        </div>
+
+    </form>
+
+    <br>
+    <button type="submit" class="btn btn-primary" id="petcasesave-button">Save</button>
+</div>
 <br><br>
-
 <div class="container">
     <table class="table table-sortable" id="pet-table">
         <thead>
+        <tr class="title-tablepetcase">
+            <td>YOUR PETS TABLE</td>
+        </tr>
         <tr>
             <th scope="col" class="columm-header">ID</th>
-            <th scope="col" class="columm-header">Fecha de Registro</th>
-            <th scope="col" class="columm-header">Nombre del Propietario</th>
-            <th scope="col" class="columm-header">Nombre de la Mascota</th>
             <th scope="col" class="columm-header">Microchip</th>
-            <th scope="col" class="columm-header">Especie</th>
-            <th scope="col" class="columm-header">Sexo</th>
-            <th scope="col" class="columm-header">Tamaño</th>
-            <th scope="col" class="columm-header">Potecialmente Peligroso</th>
-            <th scope="col" class="columm-header">Esterilizado</th>
-            <th scope="col" class="columm-header">Localidad</th>
-            <th scope="col" class="columm-header">Ultima modificación</th>
-            <th scope="col" class="columm-header">Hora de implantación Microchip</th>
-            <th scope="col" class="columm-header">Hora de esterilación</th>
-            <th scope="col" class="columm-header">Eliminar</th>
-            <th scope="col" class="columm-header">Foto</th>
+            <th scope="col" class="columm-header">Name pet</th>
+            <th scope="col" class="columm-header">Species</th>
+            <th scope="col" class="columm-header">Race</th>
+            <th scope="col" class="columm-header">Size</th>
+            <th scope="col" class="columm-header">Sex</th>
+            <th scope="col" class="columm-header">Picture</th>
         </tr>
         </thead>
         <tbody id="body-table"></tbody>
     </table>
 </div>
-<input id="petedit-button" type="button" value="Editar">
-<div id="editpet">
 
-    <form>
-        <label for="mc-input">Seleccione id a editar:</label>
-        <input type="number" class="form-control" min="0" id="mcedit-input">
-        <label for="petsize-input">Tamaño:</label>
-        <select class="form-select" id="petsizeedit-input" required>
-            <option>Miniatura</option>
-            <option>Pequeño</option>
-            <option>Mediano</option>
-            <option>Grande</option>
-        </select>
+<br><br>
 
-        <label for="danger-input">¿La mascota es potencialmente peligrosa?:</label>
-        <select class="form-select" id="dangeredit-input" required>
-            <option>Si</option>
-            <option>No</option>
-        </select>
-        <label for="locality-input">Localidad:</label>
-        <select class="form-select" id="localityedit-input">
-            <option>Usaquen</option>
-            <option>Chapinero</option>
-            <option>SANTA FE</option>
-            <option>SAN CRISTOBAL</option>
-            <option>USME</option>
-            <option>TUNJUELITO</option>
-            <option>BOSA</option>
-            <option>KENNEDY</option>
-            <option>FONTIBON</option>
-            <option>ENGATIVA</option>
-            <option>SUBA</option>
-            <option>B. UNIDOS</option>
-            <option>TEUSAQUILLO</option>
-            <option>LOS MARTIRES</option>
-            <option>A. NARINO</option>
-            <option>P. ARANDA</option>
-            <option>R. URIBE</option>
-            <option>C. BOLIVAR</option>
-            <option>MUNICIPIOS ALEDATORIOS BOGOTA D.C.</option>
-        </select>
-
-        <label for="owner-input">Editar microchip:</label>
-        <input type="text" class="form-control" id="Microchipnew-inputtext" disabled="">
-        <label for="owner-input">Editar esterilizado:</label>
-        <select class="form-select" id="Esterilizadonew-select" disabled="">
-            <option>No</option>
-            <option>Si</option>
-        </select>
-
-        Choose a file: <input type="file" name="multipartServlet"/>
-        <label> Ingrese el nombre de la mascota: </label>
-        <input type="text" name="namepet" id="NamePet-imput">
-        <input type="submit" value="Upload"/>
-
-    </form>
-
-    <br>
-    <input id="savechanges-button" type="button" value="Guardar Cambios">
-
+<div class="container">
+    <table class="table table-sortable" id="petcase-table">
+        <thead>
+        <tr class="title-tablepetcase">
+            <td>YOUR PETS CASES</td>
+        </tr>
+        <tr>
+            <th scope="col" class="columm-header">Case id</th>
+            <th scope="col" class="columm-header">Created_at</th>
+            <th scope="col" class="columm-header">Type</th>
+            <th scope="col" class="columm-header">Description</th>
+            <th scope="col" class="columm-header">Pet_id</th>
+        </tr>
+        </thead>
+        <tbody id="bodypetcase-table"></tbody>
+    </table>
+</div>
+<br><br>
+<div class="container">
+    <table class="table table-sortable" id="visits-table">
+        <thead>
+        <tr class="title-tablepetcase">
+            <td>YOUR PETS VISITS</td>
+        </tr>
+        <tr>
+            <th scope="col" class="columm-header">Visit id</th>
+            <th scope="col" class="columm-header">Created_at</th>
+            <th scope="col" class="columm-header">Type</th>
+            <th scope="col" class="columm-header">Description</th>
+            <th scope="col" class="columm-header">Vet_id</th>
+            <th scope="col" class="columm-header">Pet_id</th>
+        </tr>
+        </thead>
+        <tbody id="bodyvisits-table"></tbody>
+    </table>
 </div>
 <script src="js/jquery-3.6.0.min.js"></script>
 
