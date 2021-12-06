@@ -15,7 +15,7 @@ public class PetCase {
     private Integer case_id;
 
     @Column(name = "created_at", nullable = false)
-    private Date created_at;
+    private String created_at;
 
     @Column(name = "type", nullable = false)
     private String type;
@@ -30,13 +30,13 @@ public class PetCase {
     public PetCase() {
     }
 
-    public PetCase(Date created_at, String type, String description) {
+    public PetCase(String created_at, String type, String description) {
         this.created_at = created_at;
         this.type = type;
         this.description = description;
     }
 
-    public PetCase(Integer case_id, Date created_at, String type, String description, Pet pet) {
+    public PetCase(Integer case_id, String created_at, String type, String description, Pet pet) {
         this.case_id = case_id;
         this.created_at = created_at;
         this.type = type;
@@ -52,11 +52,11 @@ public class PetCase {
         this.case_id = case_id;
     }
 
-    public Date getCreated_at() {
+    public String getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(Date created_at) {
+    public void setCreated_at(String created_at) {
         this.created_at = created_at;
     }
 

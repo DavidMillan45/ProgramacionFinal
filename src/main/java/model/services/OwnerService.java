@@ -90,7 +90,7 @@ public class OwnerService {
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         ownerRepository = new OwnerRepositoryImpl(entityManager);
-        ownerRepository.update(ownerPojo.getUsername(), ownerPojo.getName(), ownerPojo.getAdress(),ownerPojo.getEmail() ,ownerPojo.getNeighborhood());
+        ownerRepository.update(ownerPojo.getUsername(), ownerPojo.getAdress(), ownerPojo.getNeighborhood());
 
         entityManager.close();
         entityManagerFactory.close();

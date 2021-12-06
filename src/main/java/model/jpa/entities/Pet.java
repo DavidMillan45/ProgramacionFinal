@@ -9,7 +9,6 @@ import java.util.List;
 public class Pet {
 
     @Id
-    @GeneratedValue
     @Column(name = "pet_id")
     private String pet_id;
 
@@ -31,10 +30,6 @@ public class Pet {
     @Column(name = "sex", nullable = false)
     private String sex;
 
-    @Column(name = "picture", nullable = false)
-    private String picture;
-
-
     @OneToMany(mappedBy = "pet")
     private List<PetCase> Petscase = new ArrayList<>();
 
@@ -50,17 +45,7 @@ public class Pet {
     public Pet() {
     }
 
-    public Pet(String microchip, String name, String especies, String race, String size, String sex, String picture) {
-        this.microchip = microchip;
-        this.name = name;
-        this.especies = especies;
-        this.race = race;
-        this.size = size;
-        this.sex = sex;
-        this.picture = picture;
-    }
-
-    public Pet(String pet_id, String microchip, String name, String especies, String race, String size, String sex, String picture, List<PetCase> petscase) {
+    public Pet(String pet_id,String microchip, String name, String especies, String race, String size, String sex) {
         this.pet_id = pet_id;
         this.microchip = microchip;
         this.name = name;
@@ -68,7 +53,16 @@ public class Pet {
         this.race = race;
         this.size = size;
         this.sex = sex;
-        this.picture = picture;
+    }
+
+    public Pet(String pet_id, String microchip, String name, String especies, String race, String size, String sex, List<PetCase> petscase) {
+        this.pet_id = pet_id;
+        this.microchip = microchip;
+        this.name = name;
+        this.especies = especies;
+        this.race = race;
+        this.size = size;
+        this.sex = sex;
         Petscase = petscase;
     }
 
@@ -126,14 +120,6 @@ public class Pet {
 
     public void setSex(String sex) {
         this.sex = sex;
-    }
-
-    public String getPicture() {
-        return picture;
-    }
-
-    public void setPicture(String picture) {
-        this.picture = picture;
     }
 
     public List<PetCase> getPetscase() {

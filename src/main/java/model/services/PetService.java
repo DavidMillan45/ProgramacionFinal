@@ -1,9 +1,11 @@
 package model.services;
 
 
+import model.jpa.entities.Owner;
 import model.jpa.entities.Pet;
 import model.jpa.repositories.PetRepository;
 import model.jpa.repositories.PetRepositoryImpl;
+import model.resources.pojos.OwnerPojo;
 import model.resources.pojos.PetPojo;
 
 import javax.ejb.Stateless;
@@ -12,6 +14,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Stateless
 public class PetService {
@@ -39,7 +42,6 @@ public class PetService {
                     pet.getRace(),
                     pet.getSize(),
                     pet.getSex(),
-                    pet.getPicture(),
                     pet.getOwner().getPerson_id()
             ));
         }
@@ -48,30 +50,40 @@ public class PetService {
 
     }
 
-    public Pet savePet(String microchip, String name, String species, String race, String size, String sex, String picture) {
+    public Optional<PetPojo> savePet(String pet_id, String microchip, String name, String species, String race, String size, String sex) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         PetRepository = new PetRepositoryImpl(entityManager);
 
-        Pet pet = new Pet(microchip, name, species, race, size, sex, picture);
-        Pet persistedPet = PetRepository.save(pet).get();
+        Pet pet = new Pet(pet_id,microchip, name, species, race, size, sex);
+        Optional<Pet> persistedPet = PetRepository.save(pet);
 
         entityManager.close();
         entityManagerFactory.close();
-
-        return persistedPet;
+        if (persistedPet.isPresent()) {
+            return Optional.of(new PetPojo(persistedPet.get().getPet_id(),
+                    persistedPet.get().getMicrochip(),
+                    persistedPet.get().getName(),
+                    persistedPet.get().getEspecies(),
+                    persistedPet.get().getName(),
+                    persistedPet.get().getRace(),
+                    persistedPet.get().getSex(),
+                    persistedPet.get().getOwner().getPerson_id()));
+        } else {
+            return Optional.empty();
+        }
 
     }
 
-    public void updatePet(String pet_id, String name, String species, String race, String size, String sex, String picture) {
+    public void updatePet(String pet_id, String name, String species, String race, String size, String sex) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         PetRepository = new PetRepositoryImpl(entityManager);
-        PetRepository.update(pet_id, name, species, race, size, sex, picture);
+        PetRepository.update(pet_id, name, species, race, size, sex);
 
         entityManager.close();
         entityManagerFactory.close();
@@ -91,4 +103,5 @@ public class PetService {
 
 
     }
+
 }

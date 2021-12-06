@@ -12,7 +12,7 @@ public interface PetRepository {
 
     List<Pet> findAll();
 
-    Optional<Pet> update(String pet_id, String name, String species, String race, String size, String sex, String picture);
+    Optional<Pet> update(String pet_id, String name, String species, String race, String size, String sex);
 
     Optional<Pet> updateMicrochip(String pet_id, String microchip);
 

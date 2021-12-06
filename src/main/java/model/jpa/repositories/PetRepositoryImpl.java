@@ -24,7 +24,8 @@ public class PetRepositoryImpl implements PetRepository {
         return entityManager.createQuery("from Pet").getResultList();
     }
 
-    public Optional<Pet> update(String pet_id, String name, String species, String race, String size, String sex, String picture) {
+
+    public Optional<Pet> update(String pet_id, String name, String species, String race, String size, String sex) {
         try {
             entityManager.getTransaction().begin();
             Pet pet = entityManager.find(Pet.class, pet_id);
@@ -33,7 +34,6 @@ public class PetRepositoryImpl implements PetRepository {
             pet.setRace(race);
             pet.setSize(size);
             pet.setSex(sex);
-            pet.setPicture(picture);
             entityManager.getTransaction().commit();
             return Optional.of(pet);
         } catch (Exception e) {

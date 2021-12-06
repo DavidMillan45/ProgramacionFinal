@@ -23,7 +23,7 @@ public class PetCaseService {
     PetRepository petRepository;
 
 
-    public void savePetCase(Date created_at, String type, String description, String pet_id) {
+    public void savePetCase(String case_id,String created_at, String type, String description, String pet_id) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();

@@ -9,13 +9,10 @@ public class PetPojo {
     private String race;
     private String size;
     private String sex;
-    private String picture;
     private String owner_id;
 
-    public PetPojo(){
 
-    }
-    public PetPojo(String pet_id, String microchip, String name, String species, String race, String size, String sex, String picture, String owner_id) {
+    public PetPojo(String pet_id, String microchip, String name, String species, String race, String size, String sex, String owner_id) {
         this.pet_id = pet_id;
         this.microchip = microchip;
         this.name = name;
@@ -23,7 +20,6 @@ public class PetPojo {
         this.race = race;
         this.size = size;
         this.sex = sex;
-        this.picture = picture;
         this.owner_id = owner_id;
     }
 
@@ -81,14 +77,6 @@ public class PetPojo {
 
     public void setSex(String sex) {
         this.sex = sex;
-    }
-
-    public String getPicture() {
-        return picture;
-    }
-
-    public void setPicture(String picture) {
-        this.picture = picture;
     }
 
     public String getOwner_id() {
