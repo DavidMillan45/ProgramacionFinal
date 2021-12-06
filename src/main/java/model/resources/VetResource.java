@@ -19,6 +19,7 @@ import java.util.Optional;
 public class VetResource {
 
     @GET
+    @Path("/all")
     @Produces(MediaType.APPLICATION_JSON)
     public Response list() {
 
@@ -54,6 +55,7 @@ public class VetResource {
     @Path("/{username}")
     @Produces(MediaType.APPLICATION_JSON)
     public Response modify(@PathParam("username") String username, String name, String email, String address, String neighborhood, VetPojo vet) {
+
         new VetService().updateVet(username, name, email, address, neighborhood);
 
         return Response.ok()

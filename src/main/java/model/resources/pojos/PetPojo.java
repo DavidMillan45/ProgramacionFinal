@@ -11,6 +11,9 @@ public class PetPojo {
     private String sex;
     private String owner_id;
 
+    public  PetPojo () {
+
+    }
 
     public PetPojo(String pet_id, String microchip, String name, String species, String race, String size, String sex, String owner_id) {
         this.pet_id = pet_id;

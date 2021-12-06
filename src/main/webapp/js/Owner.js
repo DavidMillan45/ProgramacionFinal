@@ -82,7 +82,7 @@ function habilitarMicrochip() {
     }
 }
 
-document.getElementById("mcedit-input").addEventListener("change", habilitarMicrochip);
+//document.getElementById("mcedit-input").addEventListener("change", habilitarMicrochip);
 
 
 //microchip, name, species, race, size, sex create pet
@@ -151,7 +151,7 @@ document.getElementById("savechangesowner-button").onclick = function () {
         barrio: barrio,
     }
 
-    fetch('http://localhost:8080/Proyecto-Final-1.0-SNAPSHOT/api/pets/' + document.getElementById("usernameOwner"), {
+    fetch('http://localhost:8080/Proyecto-Final-1.0-SNAPSHOT/api/pets/'+document.getElementById("pet_idedit-input"), {
         method: 'PUT',
         body: JSON.stringify(json),
         headers: {
@@ -176,7 +176,7 @@ document.getElementById("petcasesave-button").onclick = function () {
     }
     console.log(created_at)
     //console.log(document.getElementById("type-input").value, username, password,email,person_id,name,address,neighborhood)
-    fetch('http://localhost:8080/ProgramacionFinal-1.0-SNAPSHOT/api/pets', {
+    fetch('http://localhost:8080/ProgramacionFinal-1.0-SNAPSHOT/api/petscase', {
         method: 'POST',
         body: JSON.stringify(json),
         headers: {

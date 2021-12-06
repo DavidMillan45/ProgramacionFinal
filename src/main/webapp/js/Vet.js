@@ -29,8 +29,9 @@ document.getElementById("petsave-button").onclick = function () {
     let created_at = document.getElementById("date-input").value;
     let type = document.getElementById("petsize-input").value;
     let description = document.getElementById("description-input").value;
-    let pet_id = document.getElementById("Person_id-input").value;
-    let visit_id = document.getElementById("Person_id-input").value;
+    let pet_id = document.getElementById("Pet_id-input").value;
+    let visit_id = document.getElementById("vetvisitid-input").value;
+    let username = document.getElementById("Username-input").value;
 
     let json = {
 
@@ -42,7 +43,7 @@ document.getElementById("petsave-button").onclick = function () {
     }
     console.log(json)
     //console.log(document.getElementById("type-input").value, username, password,email,person_id,name,address,neighborhood)
-    fetch('http://localhost:8080/ProgramacionFinal-1.0-SNAPSHOT/api/' + document.getElementById("type-input").value + 's', {
+    fetch('http://localhost:8080/ProgramacionFinal-1.0-SNAPSHOT/api/visits' , {
         method: 'POST',
         body: JSON.stringify(json),
         headers: {

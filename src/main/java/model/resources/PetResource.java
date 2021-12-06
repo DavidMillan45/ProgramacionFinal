@@ -13,10 +13,10 @@ import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+@Path("/pets")
 
 public class PetResource {
     @POST
-    @Path("/pets")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Response create(PetPojo petpojo) {

@@ -33,15 +33,15 @@ public class VisitResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/pets/{pet_id}/vets/{vet_id}")
-    public Response create(@PathParam("vet_id") String vet_id, @PathParam("pet_id") String pet_id, VisitPojo visit, String microchip) {
+    //@Path("/pets/{pet_id}/vets/{vet_id}")
+    public Response create(/*@PathParam("vet_id") String vet_id, @PathParam("pet_id") String pet_id,*/ VisitPojo visit, String microchip) {
 
-        new VisitService().saveVisit(visit.getCreated_at(), visit.getType(), visit.getDescription(), pet_id);
+        new VisitService().saveVisit(visit.getCreated_at(), visit.getType(), visit.getDescription(), visit.getPet_id());
 
 
         if (visit.getType().equals("Esterilizacion") || visit.getType().equals("Implantacion de microchip") || visit.getType().equals("Vacunacion") || visit.getType().equals("Desparasitacion") || visit.getType().equals("Urgencia") || visit.getType().equals("Control")) {
 
-            new PetService().updatePetMicrochi(pet_id, microchip);
+            new PetService().updatePetMicrochi(visit.getPet_id(), microchip);
             if (visit != null) {
                 return Response.status(Response.Status.CREATED)
                         .entity(visit)
