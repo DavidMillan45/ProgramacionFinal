@@ -11,7 +11,7 @@ public class Visit {
     @Id
     @GeneratedValue
     @Column(name = "visit_id")
-    private Integer visit_id;
+    private String visit_id;
 
     @Column(name = "created_at")
     private String created_at;
@@ -39,7 +39,7 @@ public class Visit {
         this.description = description;
     }
 
-    public Visit(Integer visit_id, String created_at, String type, String description, Pet pet, Vet vet) {
+    public Visit(String visit_id, String created_at, String type, String description, Pet pet, Vet vet) {
         this.visit_id = visit_id;
         this.created_at = created_at;
         this.type = type;
@@ -48,11 +48,11 @@ public class Visit {
         this.vet = vet;
     }
 
-    public Integer getVisit_id() {
+    public String getVisit_id() {
         return visit_id;
     }
 
-    public void setVisit_id(Integer visit_id) {
+    public void setVisit_id(String visit_id) {
         this.visit_id = visit_id;
     }
 

@@ -1,5 +1,5 @@
 package model.resources.pojos;
-import java.util.Date;
+
 
 public class PetCasePojo {
     private String case_id;
@@ -27,6 +27,14 @@ public class PetCasePojo {
         this.case_id = case_id;
     }
 
+    public String getCreated_at() {
+        return created_at;
+    }
+
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
+    }
+
     public String getType() {
         return type;
     }
@@ -49,13 +57,5 @@ public class PetCasePojo {
 
     public void setPet_id(String pet_id) {
         this.pet_id = pet_id;
-    }
-
-    public String getCreated_at() {
-        return created_at;
-    }
-
-    public void setCreated_at(String created_at) {
-        this.created_at = created_at;
     }
 }

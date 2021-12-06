@@ -3,17 +3,17 @@ package model.resources.pojos;
 
 public class VisitPojo {
 
-    private Integer visit_id;
+    private String visit_id;
     private String created_at;
     private String type;
     private String description;
     private String vet_id;
-    private Integer pet_id;
+    private String pet_id;
 
     public VisitPojo(){
 
     }
-    public VisitPojo(Integer visit_id, String created_at, String type, String description, String vet_id, Integer pet_id) {
+    public VisitPojo(String visit_id, String created_at, String type, String description, String vet_id, String pet_id) {
         this.visit_id = visit_id;
         this.created_at = created_at;
         this.type = type;
@@ -22,11 +22,11 @@ public class VisitPojo {
         this.pet_id = pet_id;
     }
 
-    public Integer getVisit_id() {
+    public String getVisit_id() {
         return visit_id;
     }
 
-    public void setVisit_id(Integer visit_id) {
+    public void setVisit_id(String visit_id) {
         this.visit_id = visit_id;
     }
 
@@ -62,11 +62,11 @@ public class VisitPojo {
         this.vet_id = vet_id;
     }
 
-    public Integer getPet_id() {
+    public String getPet_id() {
         return pet_id;
     }
 
-    public void setPet_id(Integer pet_id) {
+    public void setPet_id(String pet_id) {
         this.pet_id = pet_id;
     }
 }

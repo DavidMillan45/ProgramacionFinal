@@ -12,7 +12,7 @@ public class PetCase {
     @Id
     @GeneratedValue
     @Column(name = "case_id")
-    private Integer case_id;
+    private String case_id;
 
     @Column(name = "created_at", nullable = false)
     private String created_at;
@@ -30,13 +30,13 @@ public class PetCase {
     public PetCase() {
     }
 
-    public PetCase(String created_at, String type, String description) {
+    public PetCase(String case_id,String created_at, String type, String description) {
         this.created_at = created_at;
         this.type = type;
         this.description = description;
     }
 
-    public PetCase(Integer case_id, String created_at, String type, String description, Pet pet) {
+    public PetCase(String case_id, String created_at, String type, String description, Pet pet) {
         this.case_id = case_id;
         this.created_at = created_at;
         this.type = type;
@@ -44,11 +44,11 @@ public class PetCase {
         this.pet = pet;
     }
 
-    public Integer getCase_id() {
+    public String getCase_id() {
         return case_id;
     }
 
-    public void setCase_id(Integer case_id) {
+    public void setCase_id(String case_id) {
         this.case_id = case_id;
     }
 

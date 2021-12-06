@@ -1,7 +1,9 @@
 package model.resources;
 
 
+import model.resources.pojos.PetCasePojo;
 import model.resources.pojos.VisitPojo;
+import model.services.PetCaseService;
 import model.services.PetService;
 import model.services.VisitService;
 
@@ -17,11 +19,11 @@ public class VisitResource {
     @GET
     @Path("/{username}/{pet_id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response list(@PathParam("username") String username, @PathParam("pet_id") Integer pet_id) {
+    public Response list(@PathParam("username") String username, @PathParam("pet_id") String pet_id) {
 
-        List<VisitPojo> visit = new ArrayList<VisitPojo>();
-        visit.add(new VisitPojo(1, "Fecha1", "Vacunacion", "Vacunacion descripcion", username, pet_id));
-        visit.add(new VisitPojo(2, "Fecha2", "Esterilizacion", "Esterilizacion descripcion", username, pet_id));
+
+        List<VisitPojo> visit = new VisitService().listvisit(username,pet_id);
+
 
         return Response.ok()
                 .entity(visit)

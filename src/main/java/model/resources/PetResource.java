@@ -36,18 +36,19 @@ public class PetResource {
     }
 
     @GET
-    @Path("/{pet_id}")
+    @Path("/{owner_id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response list(@PathParam("pet_id") Integer pet_id) {
+    public Response list(@PathParam("owner_id") String owner_id) {
 
-        List<PetPojo> pets = new ArrayList<PetPojo>();
-        pets.add(new PetPojo("1", "Microchip1", "Max", "Especie1", "Raza1", "Pequeño", "M",  "Owner1"));
-        pets.add(new PetPojo("2", "Microchip2", "Pepe", "Especie2", "Raza2", "Grande", "H",  "Owner2"));
+
+        List<PetPojo> pets = new PetService().listPet(owner_id);
+
 
         return Response.ok()
                 .entity(pets)
                 .build();
     }
+
 
 
 

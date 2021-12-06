@@ -1,7 +1,6 @@
 package model.services;
 
 
-
 import model.jpa.entities.Owner;
 import model.jpa.repositories.OwnerRepository;
 import model.jpa.repositories.OwnerRepositoryImpl;
@@ -21,7 +20,7 @@ public class OwnerService {
 
     OwnerRepository ownerRepository;
 
-   /* public List<OwnerPojo> listOwners() {
+    public List<OwnerPojo> listOwners() {
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
         ownerRepository = new OwnerRepositoryImpl(entityManager);
@@ -32,14 +31,16 @@ public class OwnerService {
         for (Owner owner : owners) {
             ownersPojo.add(new OwnerPojo(
                     owner.getUsername(),
+                    owner.getEmail(),
+                    owner.getPassword(),
                     owner.getPerson_id(),
                     owner.getName(),
-                    owner.getAdress(),
+                    owner.getAddress(),
                     owner.getNeighborhood()
             ));
         }
         return ownersPojo;
-    }*/
+    }
 
     public Optional<OwnerPojo> saveOwner(OwnerPojo ownerpojo) {
 

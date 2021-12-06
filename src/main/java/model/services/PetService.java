@@ -21,7 +21,7 @@ public class PetService {
 
     PetRepository PetRepository;
 
-    public List<PetPojo> listPet() {
+    public List<PetPojo> listPet(String owner_id) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
         EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -34,22 +34,23 @@ public class PetService {
 
         List<PetPojo> petsPojo = new ArrayList<>();
         for (Pet pet : pets) {
-            petsPojo.add(new PetPojo(
-                    pet.getPet_id(),
-                    pet.getMicrochip(),
-                    pet.getName(),
-                    pet.getEspecies(),
-                    pet.getRace(),
-                    pet.getSize(),
-                    pet.getSex(),
-                    pet.getOwner().getPerson_id()
-            ));
+            if (pet.getOwner().getUsername().equals(owner_id)) {
+                petsPojo.add(new PetPojo(
+                        pet.getPet_id(),
+                        pet.getMicrochip(),
+                        pet.getName(),
+                        pet.getEspecies(),
+                        pet.getRace(),
+                        pet.getSize(),
+                        pet.getSex(),
+                        pet.getOwner().getPerson_id()
+                ));
+            }
         }
 
         return petsPojo;
 
     }
-
     public Optional<PetPojo> savePet(String pet_id, String microchip, String name, String species, String race, String size, String sex) {
 
         EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("tutorial");
