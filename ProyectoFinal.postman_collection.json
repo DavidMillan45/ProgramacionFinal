@@ -1,0 +1,319 @@
+{
+	"info": {
+		"_postman_id": "c6bcc449-b3ab-443c-86e0-f6f52d375a54",
+		"name": "ProyectoFinal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Crear Owner",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"username1\",\r\n    \"password\": \"123456\",\r\n    \"email\": \"username1@gmail.com\",\r\n    \"person_id\":\"1\",\r\n    \"name\": \"pepe\",\r\n    \"address\": \"address1\",\r\n    \"neighborhood\": \"localidad1\"\r\n    \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ProgramacionFinal-1.0-SNAPSHOT/api/owners",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ProgramacionFinal-1.0-SNAPSHOT",
+						"api",
+						"owners"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Vet",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"vet1\",\r\n    \"password\": \"123456\",\r\n    \"email\": \"sadad@gmail.com\",\r\n    \"name\": \"pepevets\",\r\n    \"address\": \"address1\",\r\n    \"neighborhood\": \"engativa\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ProgramacionFinal-1.0-SNAPSHOT/api/vets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ProgramacionFinal-1.0-SNAPSHOT",
+						"api",
+						"vets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear mascota",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pet_id\": \"3\",\r\n    \"microchip\": \"1223\",\r\n    \"name\": \"pepa\",\r\n    \"species\": \"canino\",\r\n    \"race\": \"pug\",\r\n    \"size\": \"pequeño\",\r\n    \"sex\": \"H\",\r\n    \"owner_id\": \"2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ProgramacionFinal-1.0-SNAPSHOT/api/pets",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ProgramacionFinal-1.0-SNAPSHOT",
+						"api",
+						"pets"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear Petcase",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n       \" case_id\": \"1\",  \r\n       \" created_at\": \"created_at\",\r\n        \"type\": \"Perdida\",\r\n        \"description\": \"description\",\r\n        \"pet_id\": \"4\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ProgramacionFinal-1.0-SNAPSHOT/api/petscase",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ProgramacionFinal-1.0-SNAPSHOT",
+						"api",
+						"petscase"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear visit",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"created_at\": \"12\",\r\n    \"type\": \"Esterilizacion\",\r\n    \"description\": \"12\",\r\n    \"pet_id\": \"12\",\r\n    \"visit_id\": \"4\"\r\n\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ProgramacionFinal-1.0-SNAPSHOT/api/visits",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ProgramacionFinal-1.0-SNAPSHOT",
+						"api",
+						"visits"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar Owner",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"address\": \"carrera 8 num 45b\",\r\n    \"neighborhood\":\"chapiero\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ProgramacionFinal-1.0-SNAPSHOT/api/owners/username1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ProgramacionFinal-1.0-SNAPSHOT",
+						"api",
+						"owners",
+						"username1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar mascota",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"name\":\"pepe\",\r\n\"species\":\"species\",\r\n\"race\":\"canino\",\r\n\"size\": \"Grande\",\r\n\"sex\": \"H\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/ProgramacionFinal-1.0-SNAPSHOT/api/pets/username1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ProgramacionFinal-1.0-SNAPSHOT",
+						"api",
+						"pets",
+						"username1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Traer a los owners",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ProgramacionFinal-1.0-SNAPSHOT/api/owners/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ProgramacionFinal-1.0-SNAPSHOT",
+						"api",
+						"owners",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Trae los casos de una mascota según Id ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ProgramacionFinal-1.0-SNAPSHOT/api/petscase/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ProgramacionFinal-1.0-SNAPSHOT",
+						"api",
+						"petscase",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Trae las visitas ",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/ProgramacionFinal-1.0-SNAPSHOT/api/visits/vet1/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ProgramacionFinal-1.0-SNAPSHOT",
+						"api",
+						"visits",
+						"vet1",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Autenticación ",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+						"key": "Authorization",
+						"value": "dXNlcm5hbWUxOjEyMzQ1Ng==",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/ProgramacionFinal-1.0-SNAPSHOT/api/owners",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"ProgramacionFinal-1.0-SNAPSHOT",
+						"api",
+						"owners"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
