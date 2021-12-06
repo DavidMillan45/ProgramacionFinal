@@ -1,1 +1,5 @@
-# ProgramacionFinal
+Integrantes: Brayan Camilo Cristancho y David Millan 
+
+Link del video https://youtu.be/oZEDZoFqNaE
+
+A lo largo del semestre han surgido varias dificultades y problematicas entorno al desarrrlo web y sus lenguajes, tal es el caso de lenguajes como JS el cual represento un gran obstaculo a medida que se incrementaba la dificultad del curso, por otro lado tambien se tiene presentaron algunos otros desafios en tematicas como JPA, websockets, y la conexion entre la interfaz front end con su respectivo back end, sin emabrgo esta dduas que alguna vez al incio del sememtre se mostraron como imponetes obstaculos a dia de hoy se podria decir que estas han quedado parcialmete superadas  ya que si bien es ciertpo que a dia de hy quedan pequeños resagos de etsas dudas no son en nada comparablaes como lo que alguna vez fueron. Por ultimo se tiene que gracias a el conociemiento adquirido y las bases sentadas por este curso se tiene la capacidad de abarcar nuevas y mejores tecnologias de programcion web que se encuentren mas a la vanguardia y tengan un uso mas aplicable a las problematicas de hoy dia.     
